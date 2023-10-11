@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> <head>
+    <Title>Merger Page</Title>
+     <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+    <h2>Spandana builds a merger</h2>
+    <input type="text"id="textInput">
+		<div class="flex-container" id="target">
+		  <div class="merger">row item 1</div>   
+		  <div class="merger">row item 2</div>  
+		  <div class="merger">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Add end</button>
+	
+	
+</body>
+<script>
+	function makeNewDiv(){
+		
+            const inputValue = document.getElementById("textInput").value;
+            const newElement = document.createElement("div");
+            newElement.innerHTML = inputValue;
+            newElement.className = "merger";
+            document.querySelector(".flex-container").appendChild(newElement);
+        };
+	
+</script>
+</html>	
