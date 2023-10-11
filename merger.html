@@ -38,7 +38,7 @@
 	<p> Press the below button to create an new element of type div and then add it at the end the container.
 		</p>
 		<button  class="bg-success"onclick="makeNewDiv()">Add end</button><br><br>
-    <button class="bg-danger"onclick="swap()">Swap</button>
+    <button class="bg-danger"onclick="swap()">Swap</button><br><br>
     <div class="flex-container" id="target">
 		  <div class="merger">row item 1</div>   
 		  <div class="merger">row item 2</div>  
@@ -65,7 +65,7 @@
             container.insertBefore(newElement, container.firstChild);
         };
 
-       function remove () {
+       function remove() {
             const mergerItems = document.getElementsByClassName("merger");
             const length = mergerItems.length;
             if (length > 0) {
@@ -75,7 +75,7 @@
             }
         };
         function swap()
-       { 
+        { 
             let mergedtems = document.getElementsByClassName("merger")
             let mergerItemsCount = mergedtems.length
             let firstValue = mergedtems[Math.round(Math.random()*(mergerItemsCount-1))]
@@ -85,7 +85,7 @@
             secondValue.parentNode.insertBefore(firstValue, secondValue);
             baseElement.insertBefore(secondValue, sibling1);
     
-  }
+        }
 	
 </script>
 </html>	
