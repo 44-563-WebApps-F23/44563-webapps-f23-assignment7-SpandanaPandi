@@ -14,8 +14,8 @@
   <h2>Spandana speed check</h2>
   <div id="target">Your time: </div>
   <div id="counter">Count: </div>
-  <button id="startTimer"onclick="startTime()">Start Timer</button>
-  <button id="reactButton" onclick="recordTime()">React</button>
+  <button class="bg-info" id="startTimer"onclick="startTime()">Start Timer</button>
+  <button class="bg-success"id="reactButton" onclick="recordTime()">React</button>
   <script> 
         let reactTime = undefined;
         let timerID;
@@ -28,14 +28,14 @@
             for (let i = 0; i < 9; i++) {
                 setTimeout(function () {
                     document.getElementById("counter").textContent = "Count: " + i;
-                }, (8 - i) * 1000);
+                }, (8 - i) * 1000,i);
             }
             setTimeout(function () {
                 if (reactTime === undefined) {
                     document.getElementById("target").textContent = "Too Slow";
                 } else {
                     const endTime = Date.now();
-                    const elapsed = endTime - (reactTime + 8000);
+                    const elapsed = endTime - (reactTime);
                     document.getElementById("target").textContent = "Time was " + elapsed + "ms";
                 }
             }, 8000);
