@@ -25,7 +25,8 @@
             console.log("React button pressed at: " + reactTime);
         }
         function startTime() {
-            for (let i = 0; i < 9; i++) {
+            let randomCount = Math.round(Math.random() * (10 - 2) + 2)
+            for (let i = 0; i < randomCount; i++) {
                 setTimeout(function () {
                     document.getElementById("counter").textContent = "Count: " + i;
                 }, (8 - i) * 1000,i);
@@ -40,6 +41,7 @@
                 }
             }, 8000);
         }
+        
   </script>
 </div>
 </body>
