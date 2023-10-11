@@ -25,7 +25,9 @@
 
 <body>
     <h2>Spandana builds a merger</h2>
-    <input type="text"id="textInput">
+    <input type="text"id="textInput"><br><br>
+    <button id="addFront" onclick="addFront()">Add front</button><br><br>
+    <button id="remove"onclick="remove()">Remove</button><br><br>
 		<div class="flex-container" id="target">
 		  <div class="merger">row item 1</div>   
 		  <div class="merger">row item 2</div>  
@@ -46,6 +48,25 @@
             newElement.innerHTML = inputValue;
             newElement.className = "merger";
             document.querySelector(".flex-container").appendChild(newElement);
+        };
+        
+        function addFront() {
+            const inputValue = document.getElementById("textInput").value;
+            const newElement = document.createElement("div");
+            newElement.innerHTML = inputValue;
+            newElement.className = "merger";
+            const container = document.querySelector(".flex-container");
+            container.insertBefore(newElement, container.firstChild);
+        };
+
+       function remove () {
+            const mergerItems = document.getElementsByClassName("merger");
+            const length = mergerItems.length;
+            if (length > 0) {
+                const middleIndex = Math.floor(length / 2);
+                const container = document.querySelector(".flex-container");
+                container.removeChild(mergerItems[middleIndex]);
+            }
         };
 	
 </script>
